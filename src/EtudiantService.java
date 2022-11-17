@@ -51,18 +51,7 @@ public class EtudiantService {
 	
 	
 
-public ArrayList<Etudiant> GetEtudiantParUniversitye()
-{
-    //...
-	return new ArrayList<>(4);
-}
 
-public ArrayList<Etudiant> GetEtudiatparLivreEmprunte()
-{
-    //...
-	return new ArrayList<>(4);
-	
-}
 
 
 	

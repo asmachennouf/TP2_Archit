@@ -1,6 +1,5 @@
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,7 +9,7 @@ public class UniversiteRepository {
 	
 	Universite GetById(int universityId) throws SQLException {
 		
-		DBConnection BD= new DBConnection();
+		DBConnection BD= DBConnection.getInstance();
 		Connection connect=BD.getConn(); 
 		Statement stmt = connect.createStatement();
 		System.out.println("LogBD : début recherche de id université dans la base de donnée");

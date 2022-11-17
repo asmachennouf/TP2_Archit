@@ -4,14 +4,14 @@ import java.sql.SQLException;
 
 public class DBConnection {
 	   
-		String BDD = "nomBD";
+		String BDD = "tp2archi";
 		String url = "jdbc:mysql://localhost:3306/" + BDD;
 		String user = "root";
 		String passwd = "";
 	    private Connection conn;
-
+	    private static DBConnection instance;
 	   
-	    public DBConnection() throws SQLException {
+	    private DBConnection() throws SQLException {
 			conn=DriverManager.getConnection(url, user,passwd);
 		}
 
@@ -20,7 +20,12 @@ public class DBConnection {
 			return conn;
 		}
 
-
+	    public static DBConnection getInstance() throws SQLException {
+	    	if(instance == null) {
+	    		instance = new DBConnection();
+	    	}
+	    	return instance;
+	    }
 		
 	
 }
