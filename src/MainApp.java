@@ -10,6 +10,12 @@ public class MainApp {
 		EtudiantService serv=new EtudiantService();
 		serv.setEtudRep(new EtudiantRepository());
 		serv.setUnivRep(new UniversiteRepository());
+		serv.setJournal(new AffichageAll());
+		AffichageAll jTemp = (AffichageAll)serv.getJournal();
+		jTemp.addJournal(new AffichageEcran());
+		jTemp.addJournal(new AffichageFile());
+		jTemp.addJournal(new AffichageDetail());
+		serv.setJournal(jTemp);
 		try {
 			serv.inscription(2, "Guendouziiiii", "wassila", "guen@gmail.com","xxxx", 1);
 			
