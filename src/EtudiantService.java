@@ -21,6 +21,9 @@ public class EtudiantService {
 	public IJournal getJournal() {
 		return this.j;
 	}
+	public IEtudiant getStudRep() {
+		return this.StudRep;
+	}
 
 	boolean inscription (int matricule, String nom, String prénom, String email,String pwd, int id_universite) throws SQLException	
 	{
@@ -31,20 +34,7 @@ public class EtudiantService {
 	    
 	    j.outPut_Msg("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 	    
-	    if(email == null || email.length() == 0)
-	    {
-	    	return false;
-	    }
-	    
-	    if (StudRep.Exists(matricule,j))
-	    {
-	        return false;
-	    }
-	    
-		if (StudRep.Exists(email,j))
-	    {
-	        return false;
-	    }
+	   
 		
 		
 		
