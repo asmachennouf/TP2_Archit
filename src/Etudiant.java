@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 
 public class Etudiant {
 
@@ -107,7 +108,16 @@ public class Etudiant {
 		public void setPwd(String pwd) {
 			this.pwd = pwd;
 		}
+		
+		
+		public void AddBonnus(int NbrLivreBonus) {
+			nbLivreMensuel_Autorise+=NbrLivreBonus;
 
+		}
+		
 		
 		
 	    }
+  
+
+    

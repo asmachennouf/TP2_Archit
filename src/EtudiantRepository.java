@@ -1,7 +1,5 @@
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -21,9 +19,9 @@ public class EtudiantRepository implements IEtudiant{
 		if (rs == 1){
 			j.outPut_Msg("log : ajout dans la BD réussi de l'étudiant  du Matricule" + E.getMatricule());
 			}else if (rs == 0){
-				j.outPut_Msg("log : Echec de l'ajout dans la BD de l'étudiant  du Matricule" + E.getMatricule());
+				 j.outPut_Msg("log : Echec de l'ajout dans la BD de l'étudiant  du Matricule" + E.getMatricule());
 			}
-		connect.close();
+		//connect.close();
 	 }
 
     @Override
@@ -38,12 +36,12 @@ public class EtudiantRepository implements IEtudiant{
 		boolean rs = stmt.executeQuery(sql).next();
 		
 		if (rs){
-			j.outPut_Msg("logBD--- :email existe dans la BD  " + email);
-			connect.close();
+			 j.outPut_Msg("logBD--- :email existe dans la BD  " + email);
+			//connect.close();
 			return true;
 			}
-		j.outPut_Msg("logBD--- : email n'existe pas " + email);	
-		connect.close();
+		 j.outPut_Msg("logBD--- : email n'existe pas " + email);	
+		//connect.close();
 		return false;
 	}
 	@Override
@@ -59,12 +57,12 @@ public class EtudiantRepository implements IEtudiant{
 		boolean rs = stmt.executeQuery(sql).next();
 		
 		if (rs){
-			j.outPut_Msg("logBD--- :etudiant avec ce matricule existe déja dans la BD  " + mat);
-			connect.close();
+			 j.outPut_Msg("logBD--- :etudiant avec ce matricule existe déja dans la BD  " + mat);
+			//connect.close();
 			return true;
 			}
-		j.outPut_Msg("logBD----: etudiant avec ce matricule n'existe pas " + mat);	
-		connect.close();
+		 j.outPut_Msg("logBD----: etudiant avec ce matricule n'existe pas " + mat);	
+		//connect.close();
 		return false;
 	}
 

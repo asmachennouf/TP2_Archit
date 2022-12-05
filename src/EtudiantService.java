@@ -1,19 +1,15 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+
 public class EtudiantService {
 	
 	private IEtudiant StudRep;
-	private IUniversite UnivRep;
 	private IJournal j;
 
 	public void setEtudRep(IEtudiant StudRep) {
 		this.StudRep = StudRep;
 	}
 	public void setUnivRep(IUniversite UnivRep) {
-		this.UnivRep = UnivRep;
 	}
 	public void setJournal(IJournal j) {
 		this.j = j;
@@ -48,6 +44,7 @@ public class EtudiantService {
 	     }                           
 	     
 		 StudRep.add(stud,j);
+		
 		 j.outPut_Msg("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 		 return true;
 	    
