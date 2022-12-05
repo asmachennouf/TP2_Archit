@@ -110,8 +110,16 @@ public class Etudiant {
 		}
 		
 		
-		public void AddBonnus(int NbrLivreBonus) {
-			nbLivreMensuel_Autorise+=NbrLivreBonus;
+		public void Bonus(Universite univ) throws SQLException {
+
+			if (univ.getPack() == TypePackage.Standard)
+		     {
+				this.nbLivreMensuel_Autorise += 5 ;
+		     }
+		     else if (univ.getPack() == TypePackage.Premium)
+		     {
+		    	 this.nbLivreMensuel_Autorise += 10 ;
+		     }                           
 
 		}
 		
