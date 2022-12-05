@@ -35,11 +35,13 @@ public class UniversiteRepository implements IUniversite {
 		Universite univ=this.GetById(universityId, null);
 		if (univ.getPack() == TypePackage.Standard)
 	     {
-	          return 5;
+			Package pack = new Standard(null);
+			return pack.getNbrLivreAutorise();
 	     }
 	     else if (univ.getPack() == TypePackage.Premium)
 	     {
-	    	 return 10;
+	    	 Package pack = new Premium(null);
+	    	 return pack.getNbrLivreAutorise();
 	     }     
 		return 0;
 	}
