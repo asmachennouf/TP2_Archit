@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,5 +28,20 @@ public class UniversiteRepository implements IUniversite {
 	
 		
 	}	
+	
+	@Override
+	public int GetNbrBonus(int universityId) throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		Universite univ=this.GetById(universityId, null);
+		if (univ.getPack() == TypePackage.Standard)
+	     {
+	          return 5;
+	     }
+	     else if (univ.getPack() == TypePackage.Premium)
+	     {
+	    	 return 10;
+	     }     
+		return 0;
+	}
 	
 }

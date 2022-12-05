@@ -1,4 +1,4 @@
-import java.sql.SQLException;
+
 
 public class Etudiant {
 
@@ -110,19 +110,11 @@ public class Etudiant {
 		}
 		
 		
-		public void Bonus(Universite univ) throws SQLException {
-
-			if (univ.getPack() == TypePackage.Standard)
-		     {
-				this.nbLivreMensuel_Autorise += 5 ;
-		     }
-		     else if (univ.getPack() == TypePackage.Premium)
-		     {
-		    	 this.nbLivreMensuel_Autorise += 10 ;
-		     }                           
+		public void AddBonnus(int NbrLivreBonus) {
+			// TODO Auto-generated method stub
+			nbLivreMensuel_Autorise+=NbrLivreBonus;
 
 		}
-		
 		
 		
 	    }

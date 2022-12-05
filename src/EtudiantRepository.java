@@ -66,4 +66,10 @@ public class EtudiantRepository implements IEtudiant{
 		return false;
 	}
 
+	@Override
+	public void AddBonnus(int NbrLivreBonus) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
