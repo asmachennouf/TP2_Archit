@@ -27,23 +27,24 @@ public class UniversiteRepository implements IUniversite {
 		return u;	
 	
 		
-	}	
+	}
+	@Override
+	public int NbrLivreAutoriser(int universityId) throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		Universite univ=this.GetById(universityId, null);
+		
+		AbstractFactory abs = new ConcretFactory();
+		Package pack = abs.getPackage(univ.getPack()); 
+		return pack.getNbrLivreAutorise();
+	}
 	
 	@Override
 	public int GetNbrBonus(int universityId) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		Universite univ=this.GetById(universityId, null);
-		if (univ.getPack() == TypePackage.Standard)
-	     {
-			Package pack = new Standard(null);
-			return pack.getNbrLivreAutorise();
-	     }
-	     else if (univ.getPack() == TypePackage.Premium)
-	     {
-	    	 Package pack = new Premium(null);
-	    	 return pack.getNbrLivreAutorise();
-	     }     
-		return 0;
+		AbstractFactory abs = new ConcretFactory();
+		Package pack = abs.getPackage(univ.getPack()); 
+		return pack.getNbrLivreBonus();
 	}
 	
 }
