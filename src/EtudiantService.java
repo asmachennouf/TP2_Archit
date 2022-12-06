@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class EtudiantService {
@@ -44,12 +45,21 @@ public class EtudiantService {
 	     }                           
 	     
 		 StudRep.add(stud,j);
+		 AjoutBonus(stud);
 		
 		 j.outPut_Msg("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 		 return true;
 	    
 		
 	}
+	private void AjoutBonus(Etudiant stud) throws SQLException, IOException {
+
+		stud.AddBonnus(UnivRep.GetNbrBonus(stud.getId_universite()));
+		
+	}
+	
+
+
 	
 	
 	
